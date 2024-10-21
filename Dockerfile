@@ -24,5 +24,8 @@ RUN mkdir -p /home/faraday/.faraday/logs
 RUN mkdir -p /home/faraday/.faraday/session
 RUN mkdir -p /home/faraday/.faraday/storage
 
+# Выполнение миграций для инициализации базы данных
+RUN faraday-manage initdb
+
 ENV PYTHONUNBUFFERED 1
 ENV FARADAY_HOME /home/faraday
